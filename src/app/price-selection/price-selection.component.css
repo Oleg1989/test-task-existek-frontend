@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input {
+    width: 45%;
+}
+
+.example-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-margin {
+  margin: 0 10px;
+}

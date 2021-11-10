@@ -1,0 +1,14 @@
+.nav {
+    height: 13vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.example-full-width {
+    width: 30vw;
+}

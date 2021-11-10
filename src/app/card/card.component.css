@@ -1,0 +1,33 @@
+.example-card {
+  flex-grow: 1;
+  width: 15vw;
+  margin: 1rem;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+p {
+    margin: 1rem;
+}
+
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}
+
+.radio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mat-radio-button {
+  margin: 5px;
+}

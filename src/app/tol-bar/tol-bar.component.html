@@ -1,0 +1,13 @@
+<div>
+    <mat-toolbar class="nav">
+        <div class="logo">
+            <img src="http://simpleicon.com/wp-content/uploads/account.svg" alt="logo" width="50vw" height="50vw" />
+            <span>{{logo}}</span>
+        </div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Search</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <a mat-button routerLink="/login" color="primary" (click)="signOut()">Sign out</a>
+    </mat-toolbar>
+</div>

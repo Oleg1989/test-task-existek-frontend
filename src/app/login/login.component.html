@@ -1,0 +1,25 @@
+<h1>Login</h1>
+<form class="example-form">
+    <div class="example-container">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+            <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <a mat-button routerLink="/main" color="primary" class="example-full-width mat-form-field" (click)="isLogin()">
+            Login
+        </a>
+        <div class="login-button">
+            <a mat-button routerLink="/sign-up" color="primary">Sign up</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+<h1>Sign up</h1>
+<form class="example-form">
+    <div class="example-container">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter your name</mat-label>
+            <input matInput [formControl]="name" required>
+            <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" [formControl]="password" required>
+            <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hidePassword">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Re-type your password</mat-label>
+            <input matInput [type]="hideReTypePassword  ? 'password' : 'text'" [formControl]="reTypePassword" required>
+            <mat-error *ngIf="reTypePassword.invalid">{{getErrorMessage()}}</mat-error>
+            <button mat-icon-button matSuffix (click)="hideReTypePassword  = !hideReTypePassword "
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideReTypePassword ">
+                <mat-icon>{{hideReTypePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <a mat-button routerLink="/main" color="primary" class="example-full-width mat-form-field" (click)="isSignUp()">
+            Sign up
+        </a>
+        <div class="sign-up-button">
+            <a mat-button routerLink="/login" color="primary">Login</a>
+        </div>
+    </div>
+</form>
