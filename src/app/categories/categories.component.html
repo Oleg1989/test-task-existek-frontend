@@ -1,11 +1,11 @@
 <h1>Categories</h1>
-<mat-selection-list #shoes>
-    <mat-list-option *ngFor="let shoe of typesOfShoes">
-        {{shoe}}
+<mat-selection-list #categories>
+    <mat-list-option *ngFor="let category of typesOfCategories">
+        {{category}}
     </mat-list-option>
 </mat-selection-list>
 
 <p>
-    Options selected: {{shoes.selectedOptions.selected.length}}
+    Options selected: {{categories.selectedOptions.selected.length}}
 </p>
 <hr>

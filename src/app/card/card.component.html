@@ -1,12 +1,13 @@
 <mat-card class="example-card">
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src={{url}} alt="Photo">
     <mat-card-content>
         <mat-radio-group class="radio">
             <mat-radio-button value="red"><span class="red">Red</span></mat-radio-button>
             <mat-radio-button value="green"><span class="green">Green</span></mat-radio-button>
             <mat-radio-button value="blue"><span class="blue">Blue</span></mat-radio-button>
         </mat-radio-group>
-        <p>Title</p>
-        <p><b>Price</b></p>
+        <p>{{title}}</p>
+        <p><b>${{price}}</b></p>
+        <p><b>Categories: </b>{{categories}}</p>
     </mat-card-content>
 </mat-card>

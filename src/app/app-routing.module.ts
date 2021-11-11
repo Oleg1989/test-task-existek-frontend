@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { MainGuard } from './main.guard';
 import { LoginComponent } from './login/login.component';
@@ -28,7 +30,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    CommonModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

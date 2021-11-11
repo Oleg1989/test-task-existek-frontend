@@ -8,16 +8,11 @@
     </aside>
     <div class="content">
         <div class="product">
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
+            <div *ngFor="let card of cards">
+                <app-card [url]="card.url" [title]="card.title" [price]="card.price" [categories]="card.categories"
+                    id={{card.id}}>
+                </app-card>
+            </div>
         </div>
         <div class="pagination">
             <app-paginator></app-paginator>

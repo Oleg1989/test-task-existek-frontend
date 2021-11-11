@@ -12,7 +12,9 @@ export class MainService {
   private MAX_PRICE: number = 100;
   private MIN_PRICE: number = 1;
   private CATEGORIES: string[] = ['Shop by Brand', 'Home', 'Electronics', 'Health', 'Sports & Outdoors'];
-  constructor() { }
+  constructor() {
+    this.creatCards();
+  }
 
   get getProducts(): Card[] {
     return this.products;
@@ -22,25 +24,31 @@ export class MainService {
       if (i % 2 === 0) {
         this.products.push({
           id: Guid.create(),
-          categories: this.CATEGORIES[Math.floor(Math.random() * (this.CATEGORIES.length - 0 + 1)) + 0],
+          categories: this.CATEGORIES[Math.floor(Math.random() * (this.CATEGORIES.length - 0)) + 0],
+          url: "https://material.angular.io/assets/img/examples/shiba2.jpg",
           title: 'Title',
           price: Math.floor(Math.random() * (this.MAX_PRICE - this.MIN_PRICE + 1)) + this.MIN_PRICE,
         });
       } else if (i % 3 === 0) {
         this.products.push({
           id: Guid.create(),
-          categories: this.CATEGORIES[Math.floor(Math.random() * (this.CATEGORIES.length - 0 + 1)) + 0],
+          categories: this.CATEGORIES[Math.floor(Math.random() * (this.CATEGORIES.length - 0)) + 0],
+          url: "https://material.angular.io/assets/img/examples/shiba2.jpg",
           title: 'Title 1',
           price: Math.floor(Math.random() * (this.MAX_PRICE - this.MIN_PRICE + 1)) + this.MIN_PRICE,
         });
       } else {
         this.products.push({
           id: Guid.create(),
-          categories: this.CATEGORIES[Math.floor(Math.random() * (this.CATEGORIES.length - 0 + 1)) + 0],
+          categories: this.CATEGORIES[Math.floor(Math.random() * (this.CATEGORIES.length - 0)) + 0],
+          url: "https://material.angular.io/assets/img/examples/shiba2.jpg",
           title: 'Title 2',
           price: Math.floor(Math.random() * (this.MAX_PRICE - this.MIN_PRICE + 1)) + this.MIN_PRICE,
         });
       }
     }
+  }
+  filterGards(categories: string): Card[] {
+    return this.products.filter(card => card.categories === categories);
   }
 }

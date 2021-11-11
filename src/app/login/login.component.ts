@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
       const users: User[] = JSON.parse(localStorage.getItem('signUp')!);
       const userAuth = users.find(user => user.email === this.email.value && user.password === this.password.value);
       localStorage.setItem('login', JSON.stringify(userAuth?.name));
+    } else {
+      alert('Check email and password!!!');
     }
   }
 

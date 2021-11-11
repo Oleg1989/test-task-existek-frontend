@@ -38,8 +38,13 @@ export class SingUpComponent implements OnInit {
           password: password,
           reTypePassword: reTypePassword,
         });
+      } else {
+        alert('Check passwords!!!');
       }
       localStorage.setItem('signUp', JSON.stringify(users));
+      localStorage.setItem('login', JSON.stringify(this.name.value));
+    } else {
+      alert('Fill in all fields');
     }
   }
 
