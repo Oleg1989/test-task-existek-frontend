@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { CardComponent } from './card/card.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    SweetAlert2Module
   ],
   providers: [],
   bootstrap: [AppComponent]

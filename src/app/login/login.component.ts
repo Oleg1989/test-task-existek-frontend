@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 import { User } from '../interface/userInterface';
 
@@ -27,9 +28,19 @@ export class LoginComponent implements OnInit {
     if (this.email.value !== '' && this.password.value !== '') {
       const users: User[] = JSON.parse(localStorage.getItem('signUp')!);
       const userAuth = users.find(user => user.email === this.email.value && user.password === this.password.value);
-      localStorage.setItem('login', JSON.stringify(userAuth?.name));
+      if (userAuth) {
+        localStorage.setItem('login', JSON.stringify(userAuth?.name));
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Check email and password!!!',
+        })
+      }
     } else {
-      alert('Check email and password!!!');
+      Swal.fire({
+        icon: 'error',
+        title: 'Check email and password!!!',
+      })
     }
   }
 

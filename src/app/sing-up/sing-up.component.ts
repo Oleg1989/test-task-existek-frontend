@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 import { User } from '../interface/userInterface';
 
@@ -39,12 +40,19 @@ export class SingUpComponent implements OnInit {
           reTypePassword: reTypePassword,
         });
       } else {
-        alert('Check passwords!!!');
+        Swal.fire({
+          icon: 'error',
+          title: 'Check passwords!!!',
+        })
+        return;
       }
       localStorage.setItem('signUp', JSON.stringify(users));
       localStorage.setItem('login', JSON.stringify(this.name.value));
     } else {
-      alert('Fill in all fields');
+      Swal.fire({
+        icon: 'error',
+        title: 'Fill in all fields!!!',
+      })
     }
   }
 

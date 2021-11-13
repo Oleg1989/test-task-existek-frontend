@@ -8,7 +8,7 @@
     </aside>
     <div class="content">
         <div class="product">
-            <div *ngFor="let card of cards">
+            <div class="card" *ngFor="let card of cards">
                 <app-card [url]="card.url" [title]="card.title" [price]="card.price" [categories]="card.categories"
                     id={{card.id}}>
                 </app-card>

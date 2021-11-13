@@ -1,6 +1,7 @@
 .container {
     display: flex;
     justify-content: space-around;
+    margin: 0 1rem;
 }
 
 .input {
@@ -10,8 +11,9 @@
 .example-section {
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
 }
 
 .example-margin {
-  margin: 0 10px;
+  margin: 0 0.5rem;
 }
