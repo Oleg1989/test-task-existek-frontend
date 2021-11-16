@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatListOption } from '@angular/material/list';
+import { MainService } from '../main/main.service';
 
 @Component({
   selector: 'app-categories',
@@ -8,13 +9,18 @@ import { MatListOption } from '@angular/material/list';
 })
 export class CategoriesComponent implements OnInit {
 
-  @Input() category: string = "";
+  selectCategory: string[] = [];
 
   typesOfCategories: string[] = ['Shop by Brand', 'Home', 'Electronics', 'Health', 'Sports & Outdoors'];
-  constructor() { }
+
+  constructor(private mainService: MainService) { }
 
   ngOnInit(): void {
-    console.log(this.category);
+
+  }
+  onNgModelChange() {
+    console.log(this.selectCategory);
+    this.mainService.filterGards(this.selectCategory);
   }
 
 }

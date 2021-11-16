@@ -1,6 +1,6 @@
 <h1>Categories</h1>
-<mat-selection-list #categories>
-    <mat-list-option *ngFor="let category of typesOfCategories">
+<mat-selection-list #categories [(ngModel)]="selectCategory" (ngModelChange)="onNgModelChange()">
+    <mat-list-option *ngFor="let category of typesOfCategories" [value]="category">
         {{category}}
     </mat-list-option>
 </mat-selection-list>

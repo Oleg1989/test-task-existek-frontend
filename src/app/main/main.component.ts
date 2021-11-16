@@ -15,7 +15,11 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cards = this.mainService.getProducts;
+    this.cards = [...this.mainService.getProducts];
+    console.log(this.cards);
+  }
+  showProducts() {
+    this.cards = [...this.mainService.getProducts];
     console.log(this.cards);
   }
 

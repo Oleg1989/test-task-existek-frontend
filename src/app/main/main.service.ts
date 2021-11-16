@@ -8,6 +8,8 @@ import { Card } from '../interface/cardInterface';
 })
 export class MainService {
   private products: Card[] = [];
+  private sortProducts: Card[] = [];
+  private newProducts: Card[] = [];
   private MAX_PRODUCTS: number = 100;
   private MAX_PRICE: number = 100;
   private MIN_PRICE: number = 1;
@@ -17,7 +19,10 @@ export class MainService {
   }
 
   get getProducts(): Card[] {
-    return this.products;
+    if (this.newProducts.length === 0) {
+      return this.products;
+    }
+    return this.newProducts;
   }
   creatCards() {
     for (let i = 1; i <= this.MAX_PRODUCTS; i++) {
@@ -48,7 +53,10 @@ export class MainService {
       }
     }
   }
-  filterGards(categories: string): Card[] {
-    return this.products.filter(card => card.categories === categories);
+  filterGards(categories: string[]) {
+    categories.forEach(category => {
+      this.sortProducts = [...this.products.filter(product => product.categories === category)];
+    });
+    this.newProducts = [...this.newProducts, ...this.sortProducts];
   }
 }
